@@ -1,0 +1,11 @@
+<li class="minicart-product">
+    <a class="product-item_remove" href="#" onclick="removeCartItems('{{ ROW_ID }}',true)" data-value="{{ ROW_ID }}"><i class="icon-cross2"></i></a>
+    <a class="product-item_img" href="{{ URL }}">
+        <img class="img-fluid singleCart-img-fluid" src="{{ IMG }}" alt="{{ NAME }}">
+    </a>
+    <div class="product-item_content">
+        <a class="product-item_title" href="{{ URL }}">{{ NAME }}</a>
+        <label>Qty : <span>{{ QTY }}</span></label>
+        <label class="product-item_quantity">Price: <span> {{ PRICE }}</span></label>
+    </div>
+</li>

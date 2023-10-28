@@ -1,0 +1,41 @@
+<div class="addToCartParentBox">
+    <div class="product_meta mt-30">
+        <div class="sku_wrapper item_meta">
+            <div class="row "><!--ml-3--->
+                <!-- <span class="{{ STOCK_STATUS_CLASS }} col-md-2 col-sm-2 text-center">{{ STOCK_STATUS }}</span>
+                <h6 class="ml-2 col-md-5 col-sm-6">{{ MIN_ORDER_QTY }} Items (Min.Order)</h6> -->
+            </div>
+            
+            <!-- <span class="label"> Available : </span>
+            <span class="sku"> In stock {{ AVAILABLE_QTY }} </span> -->
+        </div>
+    </div>
+
+    <div class="quickview-peragraph mt-10">
+        <!-- <p>{{ DESCRIPTION }}</p> -->
+    </div> 
+    
+    <div class="quickview-action-wrap mt-20 addCartQtyParent "><!--ml-3--->
+        <div class="quickview-cart-box">
+            <div class="quickview-quality">
+                <div class="cart-plus-minus">
+                    <input class="cart-plus-minus-box addToCartqty" type="number" name="qtybutton" value="{{ MIN_ORDER_QTY }}" min="{{ MIN_ORDER_QTY }}" onkeyup="stockmanipulation(this, 'type')">
+                </div>
+            </div>
+
+            <div class="quickview-button">
+                <div class="quickview-cart button">
+                    <!-- <button onclick="callAddToCart(this)" type="button" data-value="{{ PRODUCT_ID }}" class="btn--lg btn--black font-weight--reguler text-white">Add to cart</button> -->
+                    <a onclick="callAddToCart(this)" type="button" data-value="{{ PRODUCT_ID }}" class="btn--lg btn--brown font-weight--reguler text-white">Add to cart</a>
+                </div>
+                <!-- <div class="quickview-wishlist button">
+                    <a title="Add to wishlist" href="#"><i class="icon-heart"></i></a>
+                </div> -->
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <p class="text-danger error_message">{{ ERROR_MESSAGE }}</p>
+    <br>
+</div>

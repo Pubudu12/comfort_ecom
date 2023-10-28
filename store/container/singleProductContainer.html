@@ -1,0 +1,32 @@
+<div class="single-product-item text-center addToCartParentBox">
+    <div class="products-images">
+        <a href="{{ URL }}" class="product-thumbnail">
+            <img src="{{ IMG_1 }}" class="img-fluid" alt="{{ NAME }}">
+            <span class="ribbon onsale {{ DISCOUNT_DISPLAY }}">
+                {{ DISCOUNT }}{{ DISCOUNT_TYPE }}
+            </span>
+            <span class="ribbon out-of-stock " style="display: none;">
+            {{ OFFER_TEXT }}
+        </span>
+        </a>
+        <div class="product-btn">
+            <!-- <a class="add-cart-btn" onclick="callAddToCart(this)" data-value="{{ PRODUCT_ID }}" href="#">Add to Cart</a> -->
+            <input class="cart-plus-minus-box addToCartqty" type="hidden" name="qtybutton" value="1" min="{{ MIN_ORDER_QTY }}" onkeyup="stockmanipulation(this, 'type')">
+            <a class="discover-btn" href="{{ URL }}">Discover</a>
+        </div>
+        <div class="product-actions">
+            
+        </div>
+        <a href="{{ URL }}" class="product-thumbnail">
+            <span class="icon3d {{ 3D_DISPLAY }}">
+                3D
+            </span>
+        </a>
+    </div>
+    <div class="product-content">
+        <h6 class="prodect-title"><a href="{{ URL }}">{{ NAME }}</a></h6>
+        <div class="prodect-price"><sup>{{ CURRENCY }}</sup>
+           {{ PRICE }} <span class="new-price {{ DISPLAY_HIDDEN }}"> {{ UPWARDS_STATUS }} </span>
+        </div>
+    </div>
+</div>

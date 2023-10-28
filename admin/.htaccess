@@ -1,0 +1,82 @@
+
+RewriteEngine On    # Turn on the rewriting engine
+# RewriteCond %{HTTPS} off
+
+    # First rewrite to HTTPS:
+    # Don't put www. here. If it is already there it will be included, if not
+    # the subsequent rule will catch it.
+
+# RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Now, rewrite any request to the wrong domain to use www.
+    # [NC] is a case-insensitive match
+
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+# RewriteRule .* https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
+# Dashboard
+RewriteRule    ^home/?$    dashboard/dashboard.php [NC,L]
+RewriteRule    ^index/?$    dashboard/dashboard.php [NC,L]
+RewriteRule    ^index.php?$    dashboard/dashboard.php [NC,L]
+
+RewriteRule    ^admin/login/?$    account/login.php    [NC,L]
+RewriteRule    ^dealer/login/?$    dealerAccount/login/login.php    [NC,L]
+RewriteRule    ^profile/?$    admin/profile.php    [NC,L]
+RewriteRule    ^category/?$    category/category.php    [NC,L]
+RewriteRule    ^subCategory/?$    subCategory/subCategory.php    [NC,L]
+RewriteRule    ^products/?$    products/products.php    [NC,L]
+RewriteRule    ^pro_detail/?$    products/product-detail.php    [NC,L]
+RewriteRule    ^add_product/?$    products/add-product.php    [NC,L]
+
+# References One Dimensional
+RewriteRule    ^ref/1d?$    oneDReferences/references.php    [NC,L]
+RewriteRule    ^ref/1d/create?$    oneDReferences/create.php    [NC,L]
+RewriteRule    ^ref/1d/update?$    oneDReferences/update.php    [NC,L]
+RewriteRule    ^ref/1d/image?$    oneDReferences/image.php    [NC,L]
+
+# Promo Codes
+RewriteRule    ^promo_codes?$    promoCodes/promoCodes.php    [NC,L]
+RewriteRule    ^promo/create?$    promoCodes/create.php    [NC,L]
+RewriteRule    ^promo/update?$    promoCodes/update.php    [NC,L]
+
+# serialNumbers
+RewriteRule    ^serialNumbers?$    serialNumber/serialNumbers.php    [NC,L]
+RewriteRule    ^serial/create?$    serialNumber/create.php    [NC,L]
+RewriteRule    ^serial/update?$    serialNumber/update.php    [NC,L]
+RewriteRule    ^serial/upload?$    serialNumber/uploadSerialNumbers.php    [NC,L]
+
+# Product Sizes
+RewriteRule    ^sizes?$    proSizes/sizeList.php    [NC,L]
+RewriteRule    ^size/create?$    proSizes/create.php    [NC,L]
+RewriteRule    ^serial/update?$    serialNumber/update.php    [NC,L]
+RewriteRule    ^sizesRequests?$    products/customSizeReq.php    [NC,L]
+
+# Blog
+RewriteRule    ^blog/category?$    blog/categories/categories.php    [NC,L]
+RewriteRule    ^blog/category/create?$    blog/categories/create.php    [NC,L]
+RewriteRule    ^blog/category/edit?$    blog/categories/edit.php    [NC,L]
+
+RewriteRule    ^blog/tag?$    blog/tags/tags.php    [NC,L]
+RewriteRule    ^blog/tag/create?$    blog/tags/create.php    [NC,L]
+RewriteRule    ^blog/tag/edit?$    blog/tags/edit.php    [NC,L]
+
+RewriteRule    ^blog/post?$    blog/posts/posts.php    [NC,L]
+RewriteRule    ^blog/post/create?$    blog/posts/create.php    [NC,L]
+RewriteRule    ^blog/post/update?$    blog/posts/update.php    [NC,L]
+
+RewriteRule    ^downloads/file?$    downloads/downloads.php    [NC,L]
+RewriteRule    ^downloads/file/upload?$    downloads/uploads.php    [NC,L]
+
+RewriteRule    ^dealer/products?$    dealerAccount/products/products.php    [NC,L]
+RewriteRule    ^downloads/file/upload?$    downloads/uploads.php    [NC,L]
+
+RewriteRule    ^gallery/categories?$    galery_categories/galleryCategories.php    [NC,L]
+RewriteRule    ^gallery/category/create?$    galery_categories/create.php    [NC,L]
+RewriteRule    ^gallery/category/update?$    galery_categories/edit.php    [NC,L]
+
+RewriteRule    ^galleryItems?$    gallery/gallery.php    [NC,L]
+RewriteRule    ^gallery/create?$    gallery/create.php    [NC,L]
+RewriteRule    ^gallery/update?$    gallery/edit.php    [NC,L]
+RewriteRule    ^gallery/upload?$    gallery/uploadImage.php    [NC,L]
+

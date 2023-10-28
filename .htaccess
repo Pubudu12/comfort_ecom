@@ -1,0 +1,68 @@
+RewriteEngine On    # Turn on the rewriting engine
+#  RewriteCond %{HTTPS} off
+    # First rewrite to HTTPS:
+    # Don't put www. here. If it is already there it will be included, if not
+    # the subsequent rule will catch it.
+#  RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    # Now, rewrite any request to the wrong domain to use www.
+    # [NC] is a case-insensitive match
+#  RewriteCond %{HTTP_HOST} !^www\. [NC]
+#  RewriteRule .* https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Home redirections
+
+RewriteRule    ^/?$    index.php    [NC,L]
+RewriteRule    ^home/?$    index.php    [NC,L]
+RewriteRule    ^news/?$    newsAndEvents/news.php    [NC,L]
+RewriteRule    ^news_detail/?$    newsAndEvents/news_single.php    [NC,L]
+RewriteRule    ^blog/?$    blog/blog.php    [NC,L]
+RewriteRule    ^blog_detail/?$   blog/blog_single.php    [NC,L]
+RewriteRule    ^about/?$    about.php    [NC,L]
+# RewriteRule    ^shop/products/?$   store/shop/products.php    [NC,L]
+# RewriteRule    ^shop/?$   store/shop/products.php    [NC,L]
+RewriteRule    ^shop/?$   store/shop/category.php    [NC,L]
+RewriteRule    ^shop/pro/?$   store/shop/product-details.php    [NC,L]
+RewriteRule    ^shop/?$   product.php    [NC,L]
+RewriteRule    ^contact/?$   contact.php    [NC,L]
+RewriteRule    ^search?$    store/shop/products.php    [NC,L]
+RewriteRule    ^terms/?$   terms.php    [NC,L]
+RewriteRule    ^privacy/?$   privacy.php    [NC,L]
+RewriteRule    ^gallery/?$   gallery.php    [NC,L]
+RewriteRule    ^return/?$   return.php    [NC,L]
+RewriteRule    ^wishlist/?$    account/wishlist.php    [NC,L]
+RewriteRule    ^edit_profile/?$    account/edit_profile.php    [NC,L]
+RewriteRule    ^change_pass/?$    account/change_pass.php    [NC,L]
+
+RewriteRule    ^napper/?$    napper/napper.php    [NC,L]
+RewriteRule    ^napper-single/?$    napper/napper-single.php    [NC,L]
+
+#login
+RewriteRule    ^register/?$    account/login.php?q=register    [NC,L]
+RewriteRule    ^login/?$    account/login.php?q=login    [NC,L]
+RewriteRule    ^logout/?$    account/logout.php    [NC,L]
+#RewriteRule    ^index/?$    index.php?q=    [NC,L]
+#acccount
+RewriteRule    ^my_account/?$    account/account.php    [NC,L]
+RewriteRule    ^my_orders/?$    account/my_orders.php    [NC,L]
+RewriteRule    ^my_account/?$    account/account.php    [NC,L]
+RewriteRule    ^cart/?$    account/cart.php    [NC,L]
+RewriteRule    ^checkout/?$    account/checkout.php    [NC,L]
+RewriteRule    ^invoice/?$    account/invoice.php    [NC,L]
+
+RewriteRule    ^view_order?$    account/view_order.php    [NC,L]
+RewriteRule    ^payment/status?$    account/view_order.php    [NC,L]
+RewriteRule    ^payment/processing?$    account/payment.php    [NC,L]
+RewriteRule    ^verify?$    account/serialVerification.php    [NC,L]
+#dealer
+RewriteRule    ^dealer/register/?$    dealer/register.php    [NC,L]
+RewriteRule    ^dealer/login/?$    dealer/login.php    [NC,L]
+RewriteRule    ^dealer/logout/?$    dealer/logout.php    [NC,L]
+
+#resetPasswordLink
+RewriteRule    ^resetPassword/?$    account/resetPassword.php    [NC,L]
+
+
+# New slug URLs
+# RewriteCond %{SCRIPT_FILENAME} !-f
+# RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ^shop/?$ store/shop/products.php?slug=/slug/ [L]
+RewriteRule ^shop/(.*)/?([0-9]*) store/shop/products.php?slug=/slug/$1 [L]

@@ -1,0 +1,35 @@
+<form class="forms-sample" id="create_product_discount_form"
+    data-action-after=3
+    data-redirect-url="clickDiscountDataTable"
+    method="POST"
+    action="{{ URL }}">
+
+    <div class="row">
+
+        <div class="form-group col-5">
+            <label class="text-bold">name</label>
+            <input type="text" class="form-control text-right" name="name" value="{{ NAME }}" placeholder="Name">
+        </div>
+
+        <div class="form-group col-2">
+            <label class="text-bold">Min Qty</label>
+            <input type="text" name="min_qty"  class="form-control text-right" value="{{ MIN_QTY }}" placeholder="Minimum Qty">
+        </div>
+
+        <div class="form-group col-4">
+            <label class="text-bold ml-3">Discount</label>
+            <span class="input-group col-12">
+                <select id="price_dis_type" name="discount_type" class="col-md-5 custom-select">
+                    <option value="{{ DISCOUNT_TYPE }}" selected>{{ DISCOUNT_TYPE }}</option>
+                </select>
+                <input type="text" class="col-md-8 form-control text-right" value='{{ DISCOUNT_VALUE }}' name="discount_value" placeholder="Discount">
+            </span>
+        </div>
+
+        <div class="form-group col-1 margin-top text-right">
+            <input type="hidden" name="update_product_discount" value="{{ DISCOUNT_ID }}">
+            <button type="button" class="btn btn-primary pull-right submit_form_no_confirm" data-notify_type=2 data-validate=0  ><i class="fa fa-plus"></i> </button>
+        </div>
+
+    </div>
+</form>

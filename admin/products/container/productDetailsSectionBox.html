@@ -1,0 +1,30 @@
+<div class="sec-textBox">
+                                    
+    <div class="row">
+        <div class="col-12">
+
+            <input type="hidden" value="{{ ROW_ID }}" class="sec-row_id">
+            
+            <div class="input-group">
+                
+                <div class="input-group-prepend">
+                    <input type="text" class="form-control sec-order" value="{{ ORDER }}" placeholder="Order">
+                </div>
+                
+                <input type="text" class="form-control sec-title" value="{{ TITLE }}" placeholder="Title">
+
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" onclick="editSections(this)">Edit</button>
+                    <button class="btn btn-outline-success" type="button" onclick="saveSections(this)">Save</button>
+                    <button class="btn btn-outline-danger" type="button" onclick="deleteSection(this)">Delete</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-12 text-center">
+            <div class="summernote-fields sec-content">{{ CONTENT }}</div>
+        </div>
+    </div>
+
+</div>

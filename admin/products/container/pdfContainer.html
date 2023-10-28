@@ -1,0 +1,11 @@
+<div class="pdf_file">
+    <a href="{{ FILE_LINK }}" name="{{ FILE_NAME }}" download="{{ FILE_NAME }}.pdf" >{{ FILE_NAME }}</a>
+    <a class="text-danger"
+        onclick="deleteItem(this)"
+        data-after-success=1
+        data-id='{{ ID }}' 
+        data-refresh='' 
+        data-url="{{ DELETE_URL }}" 
+        data-key="delete_pro_file"
+    ><i class="fa fa-trash-o"></i></a>
+</div>
